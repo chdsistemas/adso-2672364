@@ -1,11 +1,9 @@
 @extends('layouts.app')
-    
-@section('title')
-        Nuevo producto
-@endsection
-    <div>
-    @section('content')
-        <h2>Nuevo producto</h2>
+
+    @section('title')
+
+    @yield('content')
+        <h1>Edición de producto</h1>
         <form action="{{ route('productos.store') }}" method="POST">
             @csrf
             <label for="nombre">Nombre:</label><br>
@@ -27,7 +25,7 @@
             <input type="number" id="stock" name="stock" required><br><br>
 
             <button type="submit">Enviar</button>
-            
         </form>
     @endsection
-    </div>
+</body>
+</html>

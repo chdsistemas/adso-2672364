@@ -18,7 +18,7 @@ use App\Http\Controllers\ProductoController;
 
 Route::get('/', function () 
 { 
-    return view('home');
+    return view('inicio');
 });
 
 Route::get('/vista1', [PruebaController::class, 'mostrar_vista1'])->name('ruta_vista1');
@@ -31,8 +31,9 @@ Route::get('/calculadora', [PruebaController::class, 'mostrar_calculadora'])->na
 //Ruta POST que envía los datos de la calculadora
 Route::post('/calculadora', [PruebaController::class, 'calcular'])->name('enviar_calculadora');
 
-//Ruta GET que invoca la vista del producto
+//Rutas de producto
 Route::get('/productos/create', [ProductoController::class, 'create'])->name('productos.create');
-
 //Ruta POST que envía los datos del producto al servidor
 Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
+Route::get('/productos/index', [ProductoController::class, 'index'])->name('productos.index');
+
